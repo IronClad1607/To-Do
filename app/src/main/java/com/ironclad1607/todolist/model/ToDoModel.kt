@@ -1,4 +1,4 @@
-package com.ironclad1607.todolist
+package com.ironclad1607.todolist.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
