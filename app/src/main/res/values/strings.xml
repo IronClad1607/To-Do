@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">To Do List</string>
+    <string name="app_name">Agenda</string>
     <string name="date">Date</string>
     <string name="time">Time</string>
     <string name="history">History</string>

@@ -3,11 +3,11 @@ package com.ironclad1607.todolist.ui
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.TimePicker
+import androidx.appcompat.app.AppCompatActivity
 import com.ironclad1607.todolist.R
 import com.ironclad1607.todolist.db.AppDatabase
 import com.ironclad1607.todolist.model.ToDoModel
@@ -16,12 +16,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import org.intellij.lang.annotations.JdkConstants
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.AbstractList
 
-const val DB_NAME = "todo.db"
 
 class NewTaskActivity : AppCompatActivity(), View.OnClickListener {
 
