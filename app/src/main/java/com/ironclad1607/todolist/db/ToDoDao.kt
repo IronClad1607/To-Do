@@ -22,4 +22,7 @@ interface ToDoDao {
 
     @Query("SELECT * FROM ToDoModel WHERE isFinished == 1")
     fun getDoneTask(): LiveData<List<ToDoModel>>
+
+    @Query("UPDATE ToDoModel SET isFinished = 0 where id=:uid")
+    fun unFinishTask(uid: Long)
 }
