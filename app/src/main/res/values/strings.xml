@@ -4,4 +4,12 @@
     <string name="time">Time</string>
     <string name="history">History</string>
     <string name="search">Search</string>
+    <string name="task_title">Task Title</string>
+    <string name="enter_task_title">Enter Task Title</string>
+    <string name="what_is_to_be_done">What is to be done?</string>
+    <string name="enter_your_task">Enter your Task</string>
+    <string name="set_reminder_date">Set reminder Date and Time</string>
+    <string name="set_date">Set Date</string>
+    <string name="set_time">Set Time</string>
+    <string name="save_task">Save Task</string>
 </resources>

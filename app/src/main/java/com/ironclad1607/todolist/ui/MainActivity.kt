@@ -1,5 +1,6 @@
 package com.ironclad1607.todolist.ui
 
+import android.content.Intent
 import android.graphics.*
 import android.os.Bundle
 import android.view.Menu
@@ -219,10 +220,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openNewTask(view: View) {
-        Toast.makeText(
-            this,
-            "Work In Progress",
-            Toast.LENGTH_LONG
-        ).show()
+        startActivity(Intent(this, NewTaskActivity::class.java))
     }
 }
