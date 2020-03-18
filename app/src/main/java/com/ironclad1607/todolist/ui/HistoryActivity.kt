@@ -47,47 +47,7 @@ class HistoryActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.history_menu, menu)
-        val item = menu?.findItem(R.id.search)
-        val searchView = item?.actionView as SearchView
-        item.setOnActionExpandListener(object : MenuItem.OnActionExpandListener {
-            override fun onMenuItemActionExpand(item: MenuItem?): Boolean {
-                displayToDo()
-                return true
-            }
-
-            override fun onMenuItemActionCollapse(item: MenuItem?): Boolean {
-                displayToDo()
-                return true
-            }
-
-        })
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                if (!newText.isNullOrEmpty()) {
-                    displayToDo(newText)
-                }
-                return true
-            }
-
-        })
-        return super.onCreateOptionsMenu(menu)
+        return true
     }
 
-    fun displayToDo(newText: String = "") {
-        db.todoDao().getDoneTask().observe(this, Observer {
-            if (it.isEmpty()) {
-                list.clear()
-                list.addAll(
-                    it.filter { todo ->
-                        todo.title.contains(newText, true)
-                    }
-                )
-                adapter.notifyDataSetChanged()
-            }
-        })
-    }
 }
