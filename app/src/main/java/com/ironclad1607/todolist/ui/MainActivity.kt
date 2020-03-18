@@ -209,11 +209,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.history -> {
-                Toast.makeText(
-                    this,
-                    "Work In Progress",
-                    Toast.LENGTH_LONG
-                ).show()
+                startActivity(Intent(this, HistoryActivity::class.java))
             }
         }
         return super.onOptionsItemSelected(item)
