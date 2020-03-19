@@ -1,8 +1,12 @@
 package com.ironclad1607.todolist.ui
 
 import android.annotation.SuppressLint
+import android.app.AlarmManager
 import android.app.DatePickerDialog
+import android.app.PendingIntent
 import android.app.TimePickerDialog
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
@@ -88,10 +92,23 @@ class NewTaskActivity : AppCompatActivity(), View.OnClickListener {
                         )
                     )
             }
-
+//            startAlarm(myCalendar)
             finish()
         }
     }
+
+//    private fun startAlarm(myCalendar: Calendar) {
+//        val am = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+//        val intent = Intent(this, AlertReceiver::class.java)
+//        val pi = PendingIntent.getBroadcast(this, 1, intent, 0)
+//
+//        if (myCalendar.before(Calendar.getInstance())) {
+//            myCalendar.add(Calendar.DATE, 1)
+//        }
+//
+//        am.setExact(AlarmManager.RTC_WAKEUP, myCalendar.timeInMillis, pi)
+//
+//    }
 
     private fun setTimeListener() {
         myCalendar = Calendar.getInstance()
