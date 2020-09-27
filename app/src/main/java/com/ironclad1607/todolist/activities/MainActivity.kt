@@ -1,4 +1,4 @@
-package com.ironclad1607.todolist.ui
+package com.ironclad1607.todolist.activities
 
 import android.content.Intent
 import android.graphics.*
@@ -6,9 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager

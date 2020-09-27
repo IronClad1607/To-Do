@@ -1,4 +1,4 @@
-package com.ironclad1607.todolist.ui
+package com.ironclad1607.todolist.activities
 
 import android.graphics.*
 import android.os.Bundle

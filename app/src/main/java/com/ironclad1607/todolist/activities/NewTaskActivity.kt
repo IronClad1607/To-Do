@@ -1,12 +1,8 @@
-package com.ironclad1607.todolist.ui
+package com.ironclad1607.todolist.activities
 
 import android.annotation.SuppressLint
-import android.app.AlarmManager
 import android.app.DatePickerDialog
-import android.app.PendingIntent
 import android.app.TimePickerDialog
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
@@ -26,17 +22,17 @@ import java.util.*
 
 class NewTaskActivity : AppCompatActivity(), View.OnClickListener {
 
-    lateinit var myCalendar: Calendar
+    private lateinit var myCalendar: Calendar
 
-    lateinit var dateSetListener: DatePickerDialog.OnDateSetListener
-    lateinit var timeSetListener: TimePickerDialog.OnTimeSetListener
+    private lateinit var dateSetListener: DatePickerDialog.OnDateSetListener
+    private lateinit var timeSetListener: TimePickerDialog.OnTimeSetListener
 
-    var finalDate = 0L
-    var finalTime = 0L
+    private var finalDate = 0L
+    private var finalTime = 0L
 
     private val labels = arrayListOf("Personal", "Business", "Insurance", "Shopping", "Banking")
 
-    val db by lazy {
+    private val db by lazy {
         AppDatabase.getDatabase(this)
     }
 
@@ -53,7 +49,7 @@ class NewTaskActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun setUpSpinner() {
         val adapter =
-            ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, labels)
+            ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, labels)
 
         labels.sort()
         spinnerCaterogy.adapter = adapter
@@ -113,7 +109,7 @@ class NewTaskActivity : AppCompatActivity(), View.OnClickListener {
     private fun setTimeListener() {
         myCalendar = Calendar.getInstance()
 
-        timeSetListener = TimePickerDialog.OnTimeSetListener() { _: TimePicker, hourOfDay, min ->
+        timeSetListener = TimePickerDialog.OnTimeSetListener { _: TimePicker, hourOfDay, min ->
             myCalendar.set(Calendar.HOUR_OF_DAY, hourOfDay)
             myCalendar.set(Calendar.MINUTE, min)
             updateTime()
